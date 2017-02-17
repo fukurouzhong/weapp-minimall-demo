@@ -1,0 +1,147 @@
+/* pages/detail/detail.wxss */
+
+.container {
+  font-size: 14px;
+}
+
+.wrap {
+  padding: 0 10px;
+}
+
+.logo {
+  text-align: center;
+}
+
+.line-flag {
+  width: 3px;
+  height: 14px;
+  display: inline-block;
+  background: lightblue;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.content {
+  margin-bottom: 5px;
+}
+
+.amount {
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.detail-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content:space-around;
+  justify-content: space-around;
+  -webkit-box-align: flex-start;
+  -webkit-align-items:flex-start;
+  align-items:flex-start;
+}
+
+.discription {
+  line-height: 1.5;
+  width: 300rpx;
+}
+
+.dis-title {
+  margin-bottom: 10px;
+}
+
+.scan {
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: red;
+  background: #eee;
+  padding: 10px;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
+}
+
+.btn-fixed {
+  position: fixed;
+  bottom: 0;
+  width: 750rpx;
+  height: 60px;
+  background: #ddd;
+}
+
+.scroll {
+  margin-bottom: 20px;
+}
+
+.scroll-view-item {
+  display: inline-block;
+  width: 150px;
+  margin-right: 10px;
+}
+
+.scroll-modal-item {
+  display: inline-block;
+  width: 550rpx;
+  height: 900rpx;
+}
+
+.qrcode {
+  width: 250rpx;
+  height: 250rpx;
+  vertical-align: middle;
+}
+
+.button {
+  width: 90%;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  background: red;
+  border: none;
+  margin-top: 10px;
+}
+
+.action-sheetwrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items:center;
+  align-items: center;
+  -webkit-justify-content:center;
+  justify-content: center;
+}
+
+.dl-name {
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.f-right {
+  margin-left: 10px;
+}
+
+.icon-download {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.dl-code {
+  font-size: 14px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  box-shadow: 1px 1px 1px #ddd;
+  width: 90%;
+}

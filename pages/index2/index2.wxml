@@ -1,0 +1,109 @@
+
+<!--pages/index2/index2.wxml-->
+<view class="container">
+  <view class="container-wrap">
+    <view class="top-banner">
+      <view class="top-txt">选择分类</view>
+      <!--<view class="banner-right" bindtap="goSearch"></view>-->
+      <image src="../../images/search.png" class="banner-right" bindtap="goSearch"></image>
+    </view>
+    <view class="category">
+
+      <!--<block wx:for="{{cateList}}">
+        <view  class="{{}}" bindtap="changeProgramList" data-cateNo="{{item.CategorySysNo}}">{{item.CategoryName}}</view>
+      </block>-->
+      <view class="{{cateNo == '' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[0].CategorySysNo}}">{{cateList[0].CategoryName}}</view>
+      <view class="{{cateNo == '17' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[1].CategorySysNo}}">{{cateList[1].CategoryName}}</view>
+      <view class="{{cateNo == '16' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[2].CategorySysNo}}">{{cateList[2].CategoryName}}</view>
+      <view class="{{cateNo == '15' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[3].CategorySysNo}}">{{cateList[3].CategoryName}}</view>
+      <view class="{{cateNo == '14' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[4].CategorySysNo}}">{{cateList[4].CategoryName}}</view>
+      <view class="{{cateNo == '13' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[5].CategorySysNo}}">{{cateList[5].CategoryName}}</view>
+      <view class="{{cateNo == '12' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[6].CategorySysNo}}">{{cateList[6].CategoryName}}</view>
+      <view class="{{cateNo == '11' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[7].CategorySysNo}}">{{cateList[7].CategoryName}}</view>
+      <view class="{{cateNo == '10' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[8].CategorySysNo}}">{{cateList[8].CategoryName}}</view>
+      <view class="{{cateNo == '9' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[9].CategorySysNo}}">{{cateList[9].CategoryName}}</view>
+      <view class="{{cateNo == '8' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[10].CategorySysNo}}">{{cateList[10].CategoryName}}</view>
+      <view class="{{cateNo == '7' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[11].CategorySysNo}}">{{cateList[11].CategoryName}}</view>
+      <view class="{{cateNo == '6' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[12].CategorySysNo}}">{{cateList[12].CategoryName}}</view>
+      <view class="{{cateNo == '5' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[13].CategorySysNo}}">{{cateList[13].CategoryName}}</view>
+      <view class="{{cateNo == '4' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[14].CategorySysNo}}">{{cateList[14].CategoryName}}</view>
+      <view class="{{cateNo == '3' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[15].CategorySysNo}}">{{cateList[15].CategoryName}}</view>
+      <view class="{{cateNo == '2' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[16].CategorySysNo}}">{{cateList[16].CategoryName}}</view>
+      <view class="{{cateNo == '1' ? 'selected' : ''}}" bindtap="changeProgramList" data-cateNo="{{cateList[17].CategorySysNo}}">{{cateList[17].CategoryName}}</view>
+    </view>
+
+    <!--<view class="wrap">
+      <view class="wrap-header">精品推荐</view>
+      <view class="recomment">
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+      </view>
+    </view>-->
+    <scroll-view scroll-y="true">
+      <view wx:for="{{programLst}}" class="list-wrap">
+        <view bindtap="viewProgram" class="list" data-sys-no="{{item.SysNo}}">
+          <image src="{{item.LogoImgPath}}" class="rec-avatar"></image>
+          <view class="mid">
+            <view class="title">{{item.ProgramName}}</view>
+            <view class="discription">{{item.Brief}}</view>
+            <view class="detail">
+              <!--<text class="vertical">{{item.UsedCount}}</text>-->
+              <text class="radius">{{item.CategoryName}}</text>
+            </view>
+          </view>
+        </view>
+        <image class="list-btn qr-little" src="../../images/qrcode_little.png" bindtap="openActionSheet" data-code="{{item.CodeImgPath}}" data-name="{{item.ProgramName}}"></image>
+      </view>
+    </scroll-view>
+  </view>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange" >
+    <block>
+      <action-sheet-item class="action-sheetwrap">
+        <image src="{{codeURL}}" class="qrcode"></image>
+        <view class="f-right">
+          <view class="dl-name">{{ProgramName}}</view>
+          <view class="dl-code" bindtap="downloadCode">
+          <image src="../../images/copy.png" class="icon-download"></image>
+          <text class="dl-m-txt">复制名称到微信搜索小程序</text></view>
+        </view>
+      </action-sheet-item>
+    </block>
+    <action-sheet-cancel>取消</action-sheet-cancel>
+  </action-sheet>
+  <view class="post-mine" bindtap="goSubmit">
+    <view class="post-txt">
+      发布
+      <text class="word-wrap">小程序</text>
+    </view>
+  </view>
+</view>
