@@ -1,0 +1,251 @@
+/* pages/index2/index2.wxss */
+
+/**index.wxss**/
+
+.container {
+  font-size: 14px;
+  position: relative;
+}
+
+.container-wrap {
+  margin-bottom: 80px;
+}
+
+.top-banner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  width: 100%;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height: 40px;
+  line-height: 40px;
+}
+
+.top-txt {
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.banner-right {
+  background: url('../../images/search.png') no-repeat;
+  width: 20px;
+  height: 20px;
+  background-size: 100%;
+  margin-right: 10px;
+}
+
+.wrap-header {
+  line-height: 1.5;
+  padding: 10px 0 10px 10px;
+  font-size: 16px;
+}
+
+.category {
+  background: #eee;
+  width: 750rpx;
+  height: 240rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 10rpx;
+}
+
+.category > view {
+  color: #898681;
+  padding: 5rpx 26rpx;
+  margin-left: 8rpx;
+  margin-right: 8rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+}
+
+.recomment {
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  border-bottom: 1px solid #eee;
+}
+
+/*.cate-item:hover {
+  background: red;
+  color: #fff;
+  border-radius: 5px;
+}*/
+
+.category .selected {
+  background: red;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.list {
+  width: 750rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  padding: 24rpx 0;
+}
+
+.list-wrap {
+  position: relative;
+}
+
+.list .title {
+  margin-bottom: 5rpx;
+  font-weight: 600;
+}
+
+.list .discription {
+  margin-bottom: 5rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #898681;
+  font-size: 26rpx;
+}
+
+/*.avatar {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}*/
+
+.rec-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mid {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  margin-right: 50px;
+  min-width: 0;
+}
+
+.list-btn {
+  border: 1px solid #ddd;
+  text-align: center;
+  height: 20px;
+  width: 20px;
+  padding: 5px;
+  line-height: 20px;
+  margin-right: 10px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -15px;
+}
+
+.vertical {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.radius {
+  background: #ddd;
+  border-radius: 8px;
+  font-size: 11px;
+  padding: 3rpx 10rpx;
+  color: #898681;
+}
+
+.inner {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.post-mine {
+  position: fixed;
+  background: red;
+  right: 10px;
+  bottom: 10px;
+  color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 54px;
+  height: 54px;
+  border-radius: 54px;
+  line-height: 1.2;
+  text-align: center;
+  border: 2px solid #fff;
+  box-shadow: 2px 1px 1px #a99f8b;
+  z-index: 2;
+}
+
+.qrcode {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.post-txt {
+  margin: auto;
+}
+
+.word-wrap {
+  display: block;
+}
+
+.action-sheetwrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.dl-name {
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.f-right {
+  margin-left: 10px;
+}
+
+.icon-download {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.dl-code {
+  font-size: 14px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  box-shadow: 1px 1px 1px #ddd;
+  width: 90%;
+}

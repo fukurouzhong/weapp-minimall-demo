@@ -1,0 +1,58 @@
+
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <view class="wrap">
+    <view class="logo">
+      <image src="{{logoImgPath}}" class="avatar"></image>
+      <view class="title">{{title}}</view>
+
+      <!--<view class="amount">{{usedCount}}</view>-->
+    </view>
+    <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" class="scroll" scroll-into-view="{{toView}}" scroll-left="{{scrollLeft}}">
+      <block wx:for="{{order}}">
+        <image src="{{item.content}}" id="{{item.index}}" class="scroll-view-item" bindtap="onImageClick"></image>
+      </block>
+
+      <!--<image id="screen1" class="scroll-view-item" src="../../images/screen1.jpg" bindtap="onImageClick"></image>
+      <image class="scroll-view-item" id="screen2" src="../../images/screen2.jpg" bindtap="onImageClick"></image>
+      <image class="scroll-view-item" id="screen3" src="../../images/screen3.jpg" bindtap="onImageClick"></image>-->
+    </scroll-view>
+  </view>
+  <view class="detail-wrapper">
+    <view class="scan" bindtap="openActionSheet">
+      <image src="{{codeImgPath}}" class="qrcode"></image>
+    </view>
+    <view class="discription">
+      <view class="dis-title">
+        <view class="line-flag"></view>
+        <text class="dis-t">{{programDetail}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!--<view class="btn-fixed">
+    <button class="button" bindtap="openActionSheet">打开</button>
+  </view>-->
+  <modal no-cancel="true" confirm-text="×" hidden="{{modalHidden}}" bindconfirm="modalBack">
+    <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" class="scroll" scroll-into-view="{{toView}}" scroll-left="{{scrollLeft}}">
+      <block wx:for="{{order}}">
+        <image src="{{item.content}}" id="{{item.index}}" class="scroll-modal-item" bindtap="onImageClick"></image>
+      </block>
+    </scroll-view>
+  </modal>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+    <block>
+      <action-sheet-item class="action-sheetwrap">
+        <image src="{{codeImgPath}}" class="qrcode"></image>
+        <view class="f-right">
+          <view class="dl-name">{{title}}</view>
+          <view class="dl-code" bindtap="downloadCode">
+            <image src="../../images/copy.png" class="icon-download"></image>
+            <text class="dl-m-txt">复制名称到微信搜索小程序</text>
+          </view>
+        </view>
+      </action-sheet-item>
+    </block>
+    <action-sheet-cancel>取消</action-sheet-cancel>
+  </action-sheet>
+</view>

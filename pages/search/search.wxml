@@ -1,0 +1,76 @@
+
+<!--pages/search/search.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+
+      <!--<view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>-->
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="searchItems">搜索</view>
+    </view>
+
+    <!--<view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+      <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">
+          <view>实时搜索文本</view>
+        </view>
+      </navigator>
+    </view>-->
+    <view class="random-wrap" wx:if="{{showRandom}}">
+      <view class="random-title">猜你喜欢</view>
+      <view class="random-lw">
+        <block wx:for="{{randomList}}">
+          <view class="random-unit" bindtap="toDetail" data-sys-no="{{item.SysNo}}">{{item.ProgramName}}</view>
+        </block>
+      </view>
+    </view>
+    <view class="no-content" wx:if="{{noContent}}">
+      <image src="../../images/box.png" class="no-box"></image>
+      <text class="no-contxt">没有找到您想要的小程序！</text>
+    </view>
+    <scroll-view scroll-y="true">
+      <view wx:for="{{programLst}}" class="list-wrap">
+        <view bindtap="toDetail" class="list" data-sys-no="{{item.SysNo}}">
+          <image src="{{item.LogoImgPath}}" class="rec-avatar"></image>
+          <view class="mid">
+            <view class="title">{{item.ProgramName}}</view>
+            <view class="discription">{{item.Brief}}</view>
+            <view class="detail">
+
+              <!--<text class="vertical">{{item.UsedCount}}</text>-->
+              <text class="radius">{{item.CategoryName}}</text>
+            </view>
+          </view>
+        </view>
+        <image class="list-btn qr-little" src="../../images/qrcode_little.png" bindtap="openActionSheet" data-code="{{item.CodeImgPath}}"></image>
+      </view>
+    </scroll-view>
+  </view>
+</view>

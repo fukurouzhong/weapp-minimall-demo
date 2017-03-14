@@ -1,0 +1,56 @@
+<!--pages/submit/submit.wxml-->
+<view class="container">
+  <form bindsubmit="bindFormSubmit">
+    <view class="section ip">
+      <view class="label">添加名称</view>
+      <input placeholder="" name="name" />
+    </view>
+    <view class="section">
+      <view class="label as">添加简介</view>
+      <textarea placeholder="" name="brief" class="area" />
+    </view>
+    <view class="section section-picker">
+      <view class="label">添加分类</view>
+      <picker class="picker" name="categorySysNo" bindchange="bindPickerChange" range="{{array}}">
+        <view class="picker-content">{{array[index]}}</view>
+      </picker>
+    </view>
+
+    <view class="upload-wrapper">
+      <view class="upload-btn">
+        <image src="{{logoURL}}" class="upload-img" bindtap="chooseimage" data-index="logo"></image>
+        <view class="ml" name="logoURL"><text class="textwrap">点击</text>上传logo</view>
+      </view>
+      <view class="veri-code">
+        <image src="{{qrURL}}" class="upload-img" bindtap="chooseimage" data-index="qr"></image>
+        <text class="ml" name="qrcodeURL"><text class="textwrap">点击</text>上传二维码</text>
+      </view>
+    </view>
+    <!--<view class="section-upload">
+      <view class="upload-wrapper">
+        <view class="uploader-ui" bindtap="chooseimage">
+          <view class="uploader-input"></view>
+        </view>
+      </view>
+      <view class="upload-wrapper">
+        <view class="uploader-ui" bindtap="chooseCast">
+          <view class="uploader-input"></view>
+        </view>
+      </view>
+    </view>-->
+    <view class="upload-wrapper">
+      <view class="castList" wx:for="{{castList}}">
+        <image src="{{item}}" class="castList-img"></image>
+      </view>
+      <view class="uploader-ui" bindtap="chooseCast">
+        <view class="uploader-input"></view>
+      </view>
+      <view class="screencast">上传截图<text class="small">(图片需小于200k)</text></view>
+    </view>
+    <view class="intro">
+      <text>我们将在24小时内审核上线</text>
+      <text>有问题请反馈......</text>
+    </view>
+      <button class="button" form-type="submit">提交</button>
+  </form>
+</view>

@@ -1,0 +1,89 @@
+<view class="container">
+  <view class="container-wrap">
+    <view class="top-banner">
+      <view class="top-txt">选择分类</view>
+      <!--<view class="banner-right" bindtap="goSearch"></view>-->
+      <image src="../../images/search.png" class="banner-right" bindtap="goSearch"></image>
+    </view>
+    <view class="category">
+
+      <block wx:for="{{cateList}}">
+        <view  class="{{index == reverseCategorySysNo ? 'selected' : ''}}" bindtap="changeProgramList" data-category-sys-no="{{item.CategorySysNo}}">{{item.CategoryName}}</view>
+      </block>
+    </view>
+
+    <!--<view class="wrap">
+      <view class="wrap-header">精品推荐</view>
+      <view class="recomment">
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+        <view class="inner">
+          <image src="../../images/shenmehaoche.png" class="avatar"></image>
+          <view>应用名</view>
+        </view>
+      </view>
+    </view>-->
+    <scroll-view scroll-y="true">
+      <view wx:for="{{programLst}}" class="list-wrap">
+        <view bindtap="viewProgram" class="list" data-sys-no="{{item.SysNo}}">
+          <image src="{{item.LogoImgPath}}" class="rec-avatar"></image>
+          <view class="mid">
+            <view class="title">{{item.ProgramName}}</view>
+            <view class="discription">{{item.Brief}}</view>
+            <view class="detail">
+              <!--<text class="vertical">{{item.UsedCount}}</text>-->
+              <text class="radius">{{item.CategoryName}}</text>
+            </view>
+          </view>
+        </view>
+        <image class="list-btn qr-little" src="../../images/qrcode_little.png" bindtap="openActionSheet" data-code="{{item.CodeImgPath}}" data-name="{{item.ProgramName}}"></image>
+      </view>
+    </scroll-view>
+  </view>
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange" >
+    <block>
+      <action-sheet-item class="action-sheetwrap">
+        <image src="{{codeURL}}" class="qrcode"></image>
+        <view class="f-right">
+          <view class="dl-name">{{ProgramName}}</view>
+          <view class="dl-code" bindtap="downloadCode">
+          <image src="../../images/copy.png" class="icon-download"></image>
+          <text class="dl-m-txt">复制名称到微信搜索小程序</text></view>
+        </view>
+      </action-sheet-item>
+    </block>
+    <action-sheet-cancel>取消</action-sheet-cancel>
+  </action-sheet>
+  <view class="post-mine" bindtap="goSubmit">
+    <view class="post-txt">
+      发布
+      <text class="word-wrap">小程序</text>
+    </view>
+  </view>
+</view>
