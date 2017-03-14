@@ -67,6 +67,7 @@ Page({
     })
   },
 
+<<<<<<< HEAD
   getProgramList(categorySysNo) {
     const self = this;
     const data = {
@@ -88,7 +89,6 @@ Page({
 
   changeProgramList(e) {
     const self = this;
-    console.log(e)
     let categorySysNo = e.currentTarget.dataset.categorySysNo;
     let reverseCategorySysNo = 0;
     if(categorySysNo != '' && categorySysNo !== 0) {

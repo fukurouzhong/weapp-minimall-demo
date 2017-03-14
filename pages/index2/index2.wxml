@@ -10,7 +10,6 @@
       <block wx:for="{{cateList}}">
         <view  class="{{index == reverseCategorySysNo ? 'selected' : ''}}" bindtap="changeProgramList" data-category-sys-no="{{item.CategorySysNo}}">{{item.CategoryName}}</view>
       </block>
-    </view>
 
     <!--<view class="wrap">
       <view class="wrap-header">精品推荐</view>

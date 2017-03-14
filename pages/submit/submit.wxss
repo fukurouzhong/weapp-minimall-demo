@@ -75,6 +75,7 @@
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
 
 .upload-wrapper {
